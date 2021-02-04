@@ -1,0 +1,93 @@
+<div class="form-container">
+  <div class="formInfo">
+    <div>Resource Type: {{formData.resourceType}}</div>
+    <div>Date: {{formData.date}}</div>
+    <div>status: {{formData.status}}</div>
+  </div>
+
+  <form (submit)="submitForm($event)">
+    <div class="checkboxDiv">
+      {{formData.item[0].text}}
+      <input type="checkbox" 
+             id="allergies" 
+             class="checkbox"
+             (change)="registerBoolean($event)">
+    </div>
+
+    <div class="section">{{formData.item[1].text}}</div>
+    <div>
+      {{formData.item[1].item[0].text}}
+             <select class="form-control" 
+             id={{formData.item[1].item[0].linkId}}  (change)="registerValues($event)" >
+              <option value = "">
+                Select Values
+              </option>
+              <option value = "male">
+                Male
+              </option>
+              <option value = "female">
+                Female
+              </option>
+            </select>
+    </div>
+    <div>
+      {{formData.item[1].item[1].text}}
+      <input id={{formData.item[1].item[1].linkId}} 
+             type="date" 
+             (change)="registerValues($event)" 
+             required>
+    </div>
+    <div  class="form-group">
+      {{formData.item[1].item[2].text}}
+      <select class="form-control"  id={{formData.item[1].item[2].linkId}} 
+      (change)="registerValues($event)" >
+        <option value = "">
+          Select Values
+        </option>
+        <option value = "uk">
+         UK
+        </option>
+        <option value = "us">
+         US
+        </option>
+      </select>
+    </div>
+    <div>
+      {{formData.item[1].item[3].text}}
+      <select class="form-control"  id={{formData.item[1].item[3].linkId}} 
+      (change)="registerValues($event)" >
+        <option value="">
+          Select Values
+        </option>
+        <option value="single">
+          Single
+        </option>
+        <option value="Married">
+          Married
+        </option>
+      </select>
+    </div>
+    
+    <div class="section">{{formData.item[2].text}}</div>
+    <div class="checkboxDiv">
+      {{formData.item[2].item[0].text}}
+      <input type="checkbox" 
+             class="checkbox"
+             id="smoke" 
+             (change)="registerBoolean($event)">
+    </div>
+    <div class="checkboxDiv">
+      {{formData.item[2].item[1].text}}
+      <input type="checkbox" 
+             id="alchohol" 
+             class="checkbox"
+             (change)="registerBoolean($event)">
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+
+<app-questionnaire-component 
+  [questionnaire]="questionnaire">
+</app-questionnaire-component>
