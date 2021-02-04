@@ -10,7 +10,7 @@ import * as dataJSON from '../assets/questionnaire.js'
 })
 
 export class AppComponent implements OnInit {
-  title = 'Mykhailo-Iliev-fhir-app-test';
+  title = 'fhir-app-test';
   // @Input() JSONdata;
   formData = dataJSON.default
   testvalue = ';';
