@@ -3,6 +3,16 @@ There will be 2 components having parent and child relation.
 
 •	Parent will be having the questionnaire form with proper css and validation done
 (more info about the form and data in the below sections)
+
+•	What is your gender is a dropdown:-
+
+1.	Select value
+2.	Male
+3.	Female
+
+
+•	Select country is a dropdown
+
 1.	Select value
 2.	US
 3.	UK
